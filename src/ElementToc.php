@@ -41,6 +41,7 @@ class ElementToc extends ElementContent
     {
         $this->beforeUpdateCMSFields(function (FieldList $fields) {
             /** @var HTMLEditorField $editorField */
+            $fields->removeByName('HTML');
             $fields->addFieldsToTab(
                 'Root.Main',
                 [
@@ -49,7 +50,6 @@ class ElementToc extends ElementContent
             );
         });
         $fields = parent::getCMSFields();
-        // $fields->removeByName('HTML');
         return $fields;
     }
 
