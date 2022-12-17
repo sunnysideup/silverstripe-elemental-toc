@@ -1,0 +1,44 @@
+{
+  "name": "sunnysideup/elemental-toc",
+  "type": "silverstripe-vendormodule",
+  "description": "Add a Table of Contents (TOC) blokc to your Elemental Area",
+  "keywords": [
+    "Silverstripe-CMS",
+    "CMS",
+    "Silverstripe",
+    "Elemental",
+    "Blocks",
+    "Table of Contents",
+    "TOC"
+  ],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Nicolaas Francken",
+      "email": "modules@sunnysideup.co.nz",
+      "role": "lead developer"
+    }
+  ],
+  "require": {
+    "silverstripe/framework": "^4.0",
+    "dnadesign/silverstripe-elemental": "^4.0"
+  },
+  "extra": {
+    "expose": [
+      "client"
+    ]
+  },
+  "autoload": {
+    "psr-4": {
+      "Sunnysideup\\ElementalToc\\": "src/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "silverstripe/vendor-plugin": true,
+      "silverstripe/recipe-plugin": true
+    },
+    "process-timeout": 600
+  }
+}
