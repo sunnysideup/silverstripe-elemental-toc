@@ -1,9 +1,0 @@
----
-Name: elemental-toc
-After:
-  - '#coreconfig'
----
-
-SilverStripe\CMS\Model\SiteTree:
-  extensions:
-    - Sunnysideup\ElementalToc\Extension\EditPageInSiteTree
