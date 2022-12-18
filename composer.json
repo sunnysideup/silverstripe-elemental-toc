@@ -1,7 +1,7 @@
 {
   "name": "sunnysideup/elemental-toc",
   "type": "silverstripe-vendormodule",
-  "description": "Add a Table of Contents (TOC) blokc to your Elemental Area",
+  "description": "Add a Table of Contents (TOC) block to your Elemental Area",
   "keywords": [
     "Silverstripe-CMS",
     "CMS",
