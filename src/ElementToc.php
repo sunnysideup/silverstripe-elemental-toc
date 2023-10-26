@@ -72,7 +72,7 @@ class ElementToc extends ElementContent
         $items = $this->Parent()
             ->Elements()
             ->exclude(['ID' => $this->ID])
-            ->filter(['Sort:GreaterThanOrEqualTo' => $this->Sort]);
+            ->filter(['Sort:GreaterThanOrEqual' => $this->Sort]);
         foreach ($items as $item) {
             $html .= '<li><a href="' . $item->Link() . '">' . $item->Title . '</a></li>';
         }
