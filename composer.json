@@ -23,11 +23,6 @@
     "silverstripe/framework": "^4.0 || ^5.0",
     "dnadesign/silverstripe-elemental": "^4.0 || ^5.0"
   },
-  "extra": {
-    "expose": [
-      "client"
-    ]
-  },
   "autoload": {
     "psr-4": {
       "Sunnysideup\\ElementalToc\\": "src/"
