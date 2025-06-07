@@ -42,7 +42,7 @@ class ElementToc extends ElementContent
             $fields->addFieldsToTab(
                 'Root.Main',
                 [
-                    LiteralField::create('TOC', $this->getToc())
+                    LiteralField::create('TOC', $this->getHTML())
                 ]
             );
         });
