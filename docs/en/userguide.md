@@ -1,3 +1,3 @@
 # User guide
 
- - To be completed
+- To be completed

@@ -2,15 +2,10 @@
 
 namespace Sunnysideup\ElementalToc;
 
+use DNADesign\Elemental\Models\ElementContent;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
-
 use SilverStripe\Forms\LiteralField;
-
-use SilverStripe\Forms\CheckboxField;
-use SilverStripe\ORM\FieldType\DBField;
-
-use DNADesign\Elemental\Models\ElementContent;
 
 /**
  * Class \Sunnysideup\ElementalToc\ElementToc
@@ -47,39 +42,24 @@ class ElementToc extends ElementContent
             $fields->addFieldsToTab(
                 'Root.Main',
                 [
-                    LiteralField::create('TOC', $this->getToc())
+                    LiteralField::create('TOC', $this->getHTML())
                 ]
             );
         });
-        $fields = parent::getCMSFields();
-        return $fields;
-    }
-
-    public function onBeforeWrite()
-    {
-        parent::onBeforeWrite();
-        $this->HTML = $this->getToc();
+        return parent::getCMSFields();
     }
 
     protected function getToc()
     {
-        if ($this->WithNumbers) {
-            $tagType = 'ol';
-        } else {
-            $tagType = 'ul';
-        }
-        $html = '<' . $tagType . '>';
-        $items = $this->Parent()
+        return $this->Parent()
             ->Elements()
             ->exclude(['ID' => $this->ID])
             ->filter(['Sort:GreaterThanOrEqual' => $this->Sort]);
-        foreach ($items as $item) {
-            $html .= '<li><a href="' . $item->Link() . '">' . $item->Title . '</a></li>';
-        }
-        $html = str_ireplace('?stage=Stage', '', $html);
-        $html = str_ireplace('?stage=Live', '', $html);
-        $html .= '</' . $tagType . '>';
-        return $html;
+    }
+
+    public function getHTML()
+    {
+        return $this->renderWith("SunnySideUp\\ElementalToC\\ElementToC");
     }
 
     public function getType()

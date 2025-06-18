@@ -18,7 +18,7 @@ addons:
     packages:
       - tidy
 
-#before_install:
+  #before_install:
   #- pip install --user codecov
 
 env:
@@ -53,4 +53,4 @@ before_script:
 
 script:
   # Execute tests with no coverage.  This is the fastest option
- - php framework/cli-script.php dev/build flush=all
+  - php framework/cli-script.php dev/build flush=all
